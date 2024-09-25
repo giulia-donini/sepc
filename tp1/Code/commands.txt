@@ -1,0 +1,10 @@
+1. ls > sepc/tp1/Code/repertoire.txt 
+2. date >> repertoire.txt 
+3. ls | grep .fruit > fruits.txt
+4. ls | grep -v -e ".fruit" -e "fruits" > legumes
+5. ls | grep -v liste | sort | head -n 5 > liste 
+6. uniq -u colors | wc -l > colors_nombre_uniq
+
+exercice clef:
+ls -1 *k | sort | tail -n 3
+cat key-files | grep -c -e "KEY" > key-number

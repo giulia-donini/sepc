@@ -1,0 +1,5 @@
+abricot.fruit
+ananas.fruit
+mirabelle.fruit
+pamplemousse.fruit
+tomate.fruit

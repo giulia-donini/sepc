@@ -1,8 +1,7 @@
-//
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <pthread.h>
 
 // Fonctions 
 void *etoile();
@@ -13,10 +12,19 @@ void *diese();
 int main(void) 
 {
 
+  pthread_t thread1, thread2;
+
   setbuf(stdout, NULL);
   printf("Je vais lancer 2 fonctions.\n");
 
-  etoile();
+  pthread_create(&thread1, NULL, etoile, NULL);
+  pthread_create(&thread2, NULL, diese, NULL);
+
+  pthread_join(thread1, NULL);
+  pthread_join(thread2, NULL);
+
+  // problem: they are executed sequentially
+  etoile(); 
   diese();
 
   return EXIT_SUCCESS;

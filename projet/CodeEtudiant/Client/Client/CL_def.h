@@ -4,6 +4,9 @@
 *	Definitions du client				*
 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+#ifndef CL_DEF_H
+#define CL_DEF_H
+
 #define CleServeur "/tmp/CleSrv"
 
 #define C_Msg	'M'
@@ -45,3 +48,5 @@ typedef struct {
    int n;       /* indice tableau derniere donnee ecrite */
    int tampon[BUF_SZ];
 }BUF;
+
+#endif /* CL_DEF_H */

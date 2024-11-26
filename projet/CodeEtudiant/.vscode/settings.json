@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "cl_moniteur.h": "c",
+        "cl_lecteur.h": "c",
+        "cl_include": "c",
+        "cl_redacteur.h": "c"
+    }
+}

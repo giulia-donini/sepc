@@ -1,8 +1,6 @@
 #include "Client/CL_include"
 #include "Client/CL_moniteur.h"
-
-int voie;
-BUF *shared_mem_ptr;
+#include "Client/CL_lecteur.h"
 
 int main(int argc, char *argv[])
 {
@@ -21,6 +19,9 @@ int main(int argc, char *argv[])
       exit(0);
     }
 
+  signal(SIGUSR1, litbuf1);
+  signal(SIGUSR2, litbuf2);
+  
 	printf("\n* * * * * * * * * * * * * * * * * * * * * * * * *\n");
 	printf("Projet CLIENT - SERVEUR\tTemps Réel E2i - Novembre\n");
 	printf("* * * * * * * * * * * * * * * * * * * * * * * * *\n");

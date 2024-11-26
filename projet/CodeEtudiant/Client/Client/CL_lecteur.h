@@ -3,8 +3,9 @@
 ***************************/
 #ifndef CL_LECTEUR_H
 #define CL_LECTEUR_H
+#include "CL_def.h"
 
-void lecteur(int voie);
+int lecteur(int voie);
 void litbuf1();
 void litbuf2();
 

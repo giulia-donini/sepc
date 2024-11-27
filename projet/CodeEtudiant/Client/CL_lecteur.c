@@ -4,7 +4,7 @@
 
 int lecteur(int voie){
     
-    // attacher la mémoire partagée
+    /* attacher la mémoire partagée */
     int CLTshmid = shmget(shared_key, 2 * sizeof(BUF), 0666 | IPC_CREAT);
     if (CLTshmid == -1) {
         perror("shmget");
@@ -16,13 +16,16 @@ int lecteur(int voie){
         exit(1);
     }
 
+    /* lit la donnée actuelle dans le tampon circulaire de la voie spécifiée */
 	int index = (shared_mem_ptr + voie)->n;
 	int data = (shared_mem_ptr + voie)->tampon[index];
 
+    /* écriture de la donnée dans le pipe correspondant à la voie */
 	if (write(pipe_st[voie][1], &data, sizeof(int)) < 0) {
         perror("Erreur écriture pipe");
         exit(EXIT_FAILURE);
     }
+    
 	return data;
 }
 
